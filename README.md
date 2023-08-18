@@ -21,7 +21,7 @@ mkdir -p /lib/firmware/intel/ipu
 cp -r ipu7-camera-bins/lib/firmware/intel/ipu/*.bin /lib/firmware/intel/ipu
 cp ipu7-camera-bins/lib/lib* /usr/lib/
 # Development files
-mkdir -p /usr/include /usr/lib/pkgconfig
-cp -r ipu7-camera-bins/include/* /usr/include/
+mkdir -p /usr/include/ipu7 /usr/lib/pkgconfig
+cp -r ipu7-camera-bins/include/* /usr/include/ipu7
 cp -r ipu7-camera-bins/lib/pkgconfig/* /usr/lib/pkgconfig/
 ```

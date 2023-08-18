@@ -1,7 +1,7 @@
 prefix=/usr
 exec_prefix=${prefix}
-libdir=${prefix}/lib
-includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/ipu7
 
 Name: libia_imaging
 Description: ia_imaging libraries
