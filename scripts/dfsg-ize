@@ -14,9 +14,7 @@ MV="git mv"
 
 soversion=0
 
-flavors=("ipu6:ipu_tgl")
-flavors+=("ipu6ep:ipu_adl")
-flavors+=("ipu6epmtl:ipu_mtl")
+flavors=("ipu7:.")
 
 for flavor in "${flavors[@]}"; do
   ipu_ver=${flavor%:*}
@@ -30,8 +28,10 @@ for flavor in "${flavors[@]}"; do
   libdir="lib/${platform}"
 
   # Remove symlinks for libgcss
-  ${RM} "${libdir}/libgcss.so.0" "${libdir}/libgcss.so"
-  ${MV} "${libdir}/libgcss.so.0.0.0" "${libdir}/libgcss.so"
+  if [ -e "${libdir}/libgcss.so.0.0.0" ]; then
+    ${RM} "${libdir}/libgcss.so.0" "${libdir}/libgcss.so"
+    ${MV} "${libdir}/libgcss.so.0.0.0" "${libdir}/libgcss.so"
+  fi
 
   replace_args=();
   for file in "${libdir}"/*.so; do
