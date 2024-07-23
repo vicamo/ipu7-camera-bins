@@ -1,0 +1,340 @@
+Source: ipu7-camera-bins
+Section: libs
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 12),
+ libexpat-dev,
+Standards-Version: 4.5.0
+Maintainer: Commercial Engineering <commercial-engineering@canonical.com>
+Vcs-Browser: https://github.com/intel/ipu7-camera-bins
+Vcs-Git: https://github.com/intel/ipu7-camera-bins.git
+
+Package: libia-aic-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-aic-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-aic-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-aic-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-aic-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-aiqb-parser-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-aiqb-parser-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-aiqb-parser-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-aiqb-parser-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-aiqb-parser-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-aiq-v1-file-debug-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-aiq-v1-file-debug-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-aiq-v1-file-debug-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-aiq-v1-file-debug-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-aiq-v1-file-debug-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-aiq-v1-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-aiq-v1-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-aiq-v1-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-aiq-v1-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-aiq-v1-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-bcomp-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-bcomp-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-bcomp-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-bcomp-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-bcomp-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-cca-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-cca-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-cca-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-cca-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-cca-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-ccat-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-ccat-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-ccat-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-ccat-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-ccat-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-cmc-parser-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-cmc-parser-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-cmc-parser-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-cmc-parser-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-cmc-parser-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-coordinate-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-coordinate-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-coordinate-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-coordinate-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-coordinate-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-dvs-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-dvs-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-dvs-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-dvs-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-dvs-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-emd-decoder-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-emd-decoder-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-emd-decoder-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-emd-decoder-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-emd-decoder-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-exc-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-exc-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-exc-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-exc-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-exc-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-lard-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-lard-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-lard-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-lard-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-lard-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-log-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-log-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-log-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-log-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-log-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-mkn-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-mkn-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-mkn-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-mkn-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-mkn-ipu7-0 for Intel IPU7 camera development.
+
+Package: libia-nvm-ipu7-0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: API library for Intel IPU7 camera
+ This package contains header files and/or static library of
+ libia-nvm-ipu7-0 for using Intel IPU7 camera.
+
+Package: libia-nvm-ipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-nvm-ipu7-0 (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-nvm-ipu7-0 for Intel IPU7 camera development.
+
+Package: libipu7-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libia-aic-ipu7-dev (= ${binary:Version}),
+ libia-aiqb-parser-ipu7-dev (= ${binary:Version}),
+ libia-aiq-v1-file-debug-ipu7-dev (= ${binary:Version}),
+ libia-aiq-v1-ipu7-dev (= ${binary:Version}),
+ libia-bcomp-ipu7-dev (= ${binary:Version}),
+ libia-cca-ipu7-dev (= ${binary:Version}),
+ libia-ccat-ipu7-dev (= ${binary:Version}),
+ libia-cmc-parser-ipu7-dev (= ${binary:Version}),
+ libia-coordinate-ipu7-dev (= ${binary:Version}),
+ libia-dvs-ipu7-dev (= ${binary:Version}),
+ libia-emd-decoder-ipu7-dev (= ${binary:Version}),
+ libia-exc-ipu7-dev (= ${binary:Version}),
+ libia-lard-ipu7-dev (= ${binary:Version}),
+ libia-log-ipu7-dev (= ${binary:Version}),
+ libia-mkn-ipu7-dev (= ${binary:Version}),
+ libia-nvm-ipu7-dev (= ${binary:Version}),
+Description: API library for Intel IPU7 camera (development files)
+ This package contains header files and/or static library of
+ libia-nvm-ipu7-0 for Intel IPU7 camera development.
+

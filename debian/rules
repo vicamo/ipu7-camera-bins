@@ -1,0 +1,109 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/default.mk
+
+SHELL = /bin/bash
+
+%:
+	dh $@
+
+clean: debian/control
+	dh_clean
+
+override_dh_install:
+	for flavor in ipu7:.; do \
+	  ipu_ver="$${flavor%:*}"; \
+	  platform="$${flavor#*:}"; \
+	  \
+	  for lib in "lib/$${platform}"/lib*.so.*; do \
+	    soname="$${lib##*/}"; \
+	    soversion="$${soname##*.}"; \
+	    basename="$${soname%.so.*}"; \
+	    pkgname="$$(echo "$${basename}" | tr _ -)"; \
+	    case "$${ipu_ver}" in \
+	    *[0-9]) \
+	      libname="$${pkgname}-$${soversion}" ;; \
+	    *) \
+	      libname="$${pkgname}$${soversion}" ;; \
+	    esac; \
+	    \
+	    libdir="debian/$${libname}/usr/lib/$${DEB_HOST_MULTIARCH}"; \
+	    mkdir -p "$${libdir}"; \
+	    install --strip "$${lib}" "$${libdir}"; \
+	    \
+	    devlibdir="debian/$${pkgname}-dev/usr/lib/$${DEB_HOST_MULTIARCH}"; \
+	    mkdir -p "$${devlibdir}"; \
+	    ln -s "$${soname}" "$${devlibdir}/$${basename}.so"; \
+	  done; \
+	  \
+	  for lib in "lib/$${platform}"/*.a; do \
+	    basename="$${lib##*/}"; \
+	    basename="$${basename%.*}"; \
+	    pkgname="$$(echo "$${basename}" | tr _ -)"; \
+	    \
+	    devlibdir="debian/$${pkgname}-dev/usr/lib/$${DEB_HOST_MULTIARCH}"; \
+	    mkdir -p "$${devlibdir}"; \
+	    install "$${lib}" "$${devlibdir}"; \
+	  done; \
+	  \
+	  for pc in "lib/$${platform}/pkgconfig"/*.pc; do \
+	    basename="$${pc##*/}"; \
+	    case "$${basename}" in \
+	    libgcss*) \
+	      devlibdir="debian/$${basename%.pc}-dev/usr/lib/$${DEB_HOST_MULTIARCH}" ;; \
+	    *) \
+	      devlibdir="debian/lib$${ipu_ver}-dev/usr/lib/$${DEB_HOST_MULTIARCH}" ;; \
+	    esac; \
+	    mkdir -p "$${devlibdir}/pkgconfig"; \
+	    cat "$${pc}" | \
+	        sed -e "s,@DEB_HOST_MULTIARCH@,$${DEB_HOST_MULTIARCH}," \
+		> $${devlibdir}/pkgconfig/$$(basename $${pc}); \
+	  done; \
+	done
+
+	dh_install
+
+.PHONY: debian/control
+debian/control:
+	cat debian/control.source > debian/control
+
+	for flavor in ipu7:.; do \
+	  ipu_ver="$${flavor%:*}"; \
+	  platform="$${flavor#*:}"; \
+	  \
+	  devall=""; \
+	  for lib in $$(ls -1 "lib/$${platform}"/lib*.so.* | sort -d); do \
+	    soname="$${lib##*/}"; \
+	    soversion="$${soname##*.}"; \
+	    basename="$${soname%.so.*}"; \
+	    pkgname="$$(echo "$${basename}" | tr _ -)"; \
+	    case "$${ipu_ver}" in \
+	    *[0-9]) \
+	      libname="$${pkgname}-$${soversion}" ;; \
+	    *) \
+	      libname="$${pkgname}$${soversion}" ;; \
+	    esac; \
+	    printf "Package: $${libname}\n"; \
+	    printf "Architecture: any\n"; \
+	    printf "Depends:\n \$${misc:Depends},\n \$${shlibs:Depends},\n"; \
+	    printf "Description: API library for Intel IPU7 camera\n"; \
+	    printf " This package contains header files and/or static library of\n $${libname} for using Intel IPU7 camera.\n\n"; \
+	    \
+	    printf "Package: $${pkgname}-dev\n"; \
+	    printf "Architecture: any\n"; \
+	    printf "Depends:\n \$${misc:Depends},\n \$${shlibs:Depends},\n $${libname} (= \$${binary:Version}),\n"; \
+	    case "$${libname}" in \
+	    libgcss*) printf " pkg-config,\n" ;; \
+	    esac; \
+            printf "Description: API library for Intel IPU7 camera (development files)\n"; \
+            printf " This package contains header files and/or static library of\n $${libname} for Intel IPU7 camera development.\n\n"; \
+	    devall="$${devall} $${pkgname}-dev (= \$${binary:Version}),\n"; \
+	  done; \
+	  \
+	  pkgname="lib$${ipu_ver}"; \
+	  printf "Package: $${pkgname}-dev\n"; \
+	  printf "Architecture: any\n"; \
+	  printf "Depends:\n \$${misc:Depends},\n \$${shlibs:Depends},\n$${devall}"; \
+          printf "Description: API library for Intel IPU7 camera (development files)\n"; \
+          printf " This package contains header files and/or static library of\n $${libname} for Intel IPU7 camera development.\n\n"; \
+	done >> debian/control

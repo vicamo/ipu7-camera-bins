@@ -1,0 +1,5 @@
+ipu7-camera-bins (0~git202407231650.f7e45f4-0ubuntu1) oracular; urgency=medium
+
+  * Initial release. (LP: #2071821)
+
+ -- You-Sheng Yang (vicamo) <vicamo.yang@canonical.com>  Wed, 24 Jul 2024 01:01:32 +0800

@@ -1,0 +1,11 @@
+Source: ipu7-camera-bins
+Section: libs
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 12),
+ libexpat-dev,
+Standards-Version: 4.5.0
+Maintainer: Commercial Engineering <commercial-engineering@canonical.com>
+Vcs-Browser: https://github.com/intel/ipu7-camera-bins
+Vcs-Git: https://github.com/intel/ipu7-camera-bins.git
+
