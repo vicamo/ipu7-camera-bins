@@ -1,0 +1,21 @@
+From: You-Sheng Yang <vicamo.yang@canonical.com>
+Date: Wed, 24 Jul 2024 01:45:37 +0800
+Subject: pkgconfig: adopt debian multiarch lib paths
+
+Signed-off-by: You-Sheng Yang <vicamo.yang@canonical.com>
+---
+ lib/pkgconfig/ia_imaging-ipu7.pc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/pkgconfig/ia_imaging-ipu7.pc b/lib/pkgconfig/ia_imaging-ipu7.pc
+index 33dbf32..81d01ce 100644
+--- a/lib/pkgconfig/ia_imaging-ipu7.pc
++++ b/lib/pkgconfig/ia_imaging-ipu7.pc
+@@ -1,6 +1,6 @@
+ prefix=/usr
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=${exec_prefix}/lib/@DEB_HOST_MULTIARCH@
+ includedir=${prefix}/include/ipu7
+ 
+ Name: libia_imaging
